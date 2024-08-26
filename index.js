@@ -18,6 +18,29 @@ signupBtn.onclick = function() {
     signinBtn.classList.add('disable');
 }
 
+///SUBMITTING FORM INPUTS
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    
+    if(name.value == "" || password.value == "" || email.value == "") {
+        alert('ensure you put a value in the fields');
+    } else {
+        //perform operation
+        alert('This form has been succesfully submitted!');
+
+        console.log(
+            `This form has a name of ${name.value} an email of ${email.value}
+        and password of ${password.value}` )
+
+        name.value = "";
+        email.value = "";
+        password.value = "";
+    };
+
+});
 
 
